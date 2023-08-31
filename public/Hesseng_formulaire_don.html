@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Formulaire de dons pour Enfant Soleil</title>
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="liaisons/css/styles.css">
+</head>
+<body>
+<main>
+    <!-- Formulaire avec étapes -->
+    <form class="formulaire">
+        <!-- Barre progrès -->
+        <ul class="barreprogres">
+            <li class="active">Transaction</li>
+            <li>coordonnées</li>
+            <li>Paiement</li>
+        </ul>
+        <fieldset>
+            <legend>Votre don</legend>
+            <h2 class="form-titre">Votre don</h2>
+            <p>Type de don<span aria-hidden="true" style="color:red">*</span></p>
+              <input type="radio" checked name="type_don" id="don_unique" value="don_unique">
+              <label for="don_unique">Don Unique</label><br>
+              <input type="radio" name="type_don" id="don_mensuel" value="don_mensuel">
+              <label for="don_mensuel">Parent Soleil - Don mensuel</label>
+            <p>Montant du don<span aria-hidden="true" style="color:red">*</span></p>
+            <input type="radio" name="montant_don" id="montant_30" value="30">
+              <label for="montant_30">30.00$</label><br>
+            <input type="radio" name="montant_don" id="montant_50" value="50">
+              <label for="montant_50">50.00$</label><br>
+            <input type="radio" name="montant_don" id="montant_75" value="75">
+              <label for="montant_50">75.00$</label><br>
+            <input type="radio" name="montant_don" id="montant_100" value="100">
+              <label for="montant_100">100.00$</label><br>
+            <input type="radio" name="montant_don" id="autre_montant" value="autre_montant">
+              <label for="autre_montant">Autre</label>
+            <input type="text" name="autre_montant" aria-label="Montant personnalisé"/><br>
+            <button name="suivant" class="soumettre bouton-action">
+                <i class="fa-regular fa-circle-check"></i>
+                Suivant
+            </button>
+        </fieldset>
+        <fieldset>
+            <legend>Renseignements personnels</legend>
+            <h2 class="form-titre">Renseignements personnels</h2>
+            <label for="email">Courriel<span aria-hidden="true" style="color: red">*</span></label><br>
+            <input type="email" required id="email" name="email" aria-describedby="email-description"><br>
+            <p>Appellation</p>
+            <input type="radio" name="appellation" id="madame" value="madame">
+              <label for="madame">Madame</label><br>
+            <input type="radio" name="appellation" id="monsieur" value="monsieur">
+              <label for="monsieur">Monsieur</label><br>
+            <label for="prenom">Prénom<span aria-hidden="true" style="color: red">*</span></label><br>
+            <input type="text" required id="prenom" name="prenom"><br>
+            <label for="nom">Nom<span aria-hidden="true" style="color: red">*</span></label><br>
+            <input type="text" required id="nom" name="nom"><br>
+            <p>Pays<span aria-hidden="true" style="color: red">*</span></p>
+            <input type="radio" name="pays" id="canada" value="canada">
+              <label for="canada">Canada</label><br>
+            <input type="radio" name="pays" id="france" value="france">
+              <label for="france">France</label><br>
+            <input type="radio" name="pays" id="etats_unis" value="etats_unis">
+              <label for="etats_unis">États-Unis</label><br>
+            <p>Province<span aria-hidden="true" style="color: red">*</span></p>
+            <select name="province" required id="province" aria-required="true">
+                <option value="AB">Alberta</option>
+                <option value="BC">British Columbia</option>
+                <option value="MB">Manitoba</option>
+                <option value="NB">New Brunswick</option>
+                <option value="NL">Newfoundland and Labrador</option>
+                <option value="NS">Nova Scotia</option>
+                <option value="NT">Northwest Territories</option>
+                <option value="NU">Nunavut</option>
+                <option value="ON">Ontario</option>
+                <option value="PE">Prince Edward Island</option>
+                <option value="QC">Quebec</option>
+                <option value="SK">Saskatchewan</option>
+                <option value="YT">Yukon</option>
+            </select><br>
+            <label for="ville">Ville<span aria-hidden="true" style="color:red">*</span></label><br>
+            <input type="text" required id="ville" name="ville" aria-required="true"><br>
+            <label for="code_postal">Code postal<span aria-hidden="true" style="color:red">*</span></label><br>
+            <input type="text" required id="code_postal" name="code_postal" aria-required="true"><br>
+            <label for="telephone">Téléphone<span aria-hidden="true" style="color:red">*</span></label><br>
+            <input type="tel" required id="telephone" name="telephone"><br>
+
+            <input type="button" name="previous" class="precedent bouton-action" value="Précédent"/>
+            <input type="button" name="suivant" class="soumettre bouton-action" value="Suivant"/>
+        </fieldset>
+        <fieldset>
+            <legend>Paiement</legend>
+            <h2 class="form-titre">Paiement</h2>
+            <div class="conteneur-icones" title="Méthodes de paiement acceptées">
+                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="nomcarte">Nom sur la carte<span aria-hidden="true" style="color: red">*</span></label>
+            <input type="text" id="nomcarte" name="nomcarte" aria-required="true"><br>
+            <label for="numerocarte">Numéro de la carte<span aria-hidden="true" style="color: red">*</span></label>
+            <input type="text" id="numerocarte" name="numerocarte" aria-required="true"><br>
+            <label for="expmois">Mois d'expiration<span aria-hidden="true" style="color: red">*</span></label>
+            <input type="text" id="expmois" name="expmois" aria-required="true"><br>
+            <label for="expannee">Année d'expiration<span aria-hidden="true" style="color: red">*</span></label>
+            <input type="text" id="expannee" name="expannee" aria-required="true"><br>
+            <label for="cvv">CVV<span aria-hidden="true" style="color: red">*</span></label>
+            <input type="text" id="cvv" name="cvv" aria-required="true"><br>
+            <input type="button" name="precedent" class="precedent bouton-action" value="Précédent"/>
+            <a href="" class="soumettre bouton-action" target="_top">Soumettre</a>
+        </fieldset>
+    </form>
+</main>
+</body>

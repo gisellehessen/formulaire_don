@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+/**
+ * @author Prenom Nom courriel
+ * @todo Lier les modules avec des instructions @import
+ * @todo Compléter selon l'énoncé de l'exercice
+ */
+
+/*
+ * ------------------
+ * TABLE DES MATIERES
+ * ------------------
+ * Librairies
+ ** Normalize
+ * UTILITAIRES
+ ** Variables
+ ** Mixins
+ * BASE
+ ** Typographie
+ ** Hyperliens
+ ** Boutons
+ * MODULES
+ ** gds - Styles généraux du Guide de styles
+ ** palette - Palette de couleurs
+ ** listeInteractivite - Éléments interactifs
+ */
+
+/****** Librairies ******/
+
+/** Normalize **/
+@import '../../../node_modules/normalize.scss/normalize.scss';
+/**** UTILITAIRES ****/
+
+/** Variables **/
+@import 'utilitaires/variables';
+
+/** Mixins **/
+@import 'utilitaires/mixins';
+
+/****** BASE ******/
+
+/** Typographie **/
+@import 'base/typo';
+@import 'base/grille';
+/** Hyperliens **/
+@import 'base/hyperlien';
+
+/** Boutons **/
+@import 'base/bouton';
+
+/****** MODULES ******/
+html {
+  height: 100%;
+  background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+}
+
+.formulaire {
+  margin: 2em auto;
+  max-width: 800px;
+  position: relative;
+  fieldset{
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: relative;
+  }
+ .bouton-action{
+   width: 100px;
+   background: #27AE60;
+   font-weight: bold;
+   color: white;
+   border: 0 none;
+   border-radius: 1px;
+   cursor: pointer;
+   padding: 10px;
+   margin: 10px 5px;
+   text-decoration: none;
+   font-size: 14px;
+   &:hover{
+     box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+   }
+ }
+}
+//empiler les formulaire un par dessus les autres
+
+//form > fieldset:not(:first-of-type) {
+//  display: none;
+//}
+.form-titre{
+  font-family: $fontePrimaire;
+  font-size: 21px;
+  text-transform: uppercase;
+  color: #2C3E50;
+  margin-bottom: 10px;
+}
+.barreprogres{
+  margin-bottom: 30px;
+  overflow: hidden;
+  text-align: center;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+  li{
+    list-style-type: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+    &:before{
+      content: counter(step);
+      counter-increment: step;
+      width: 30px;
+      line-height: 30px;
+      display: block;
+      font-size: 16px;
+      color: #333;
+      background: white;
+      border-radius: 4px;
+      margin: 0 auto 5px auto;
+    }
+    &:after{
+      content:'';
+      width: 100%;
+      height: 2px;
+      background: white;
+      position: absolute;
+      left: -50%;
+      top: 9px;
+      z-index: -1; /*put it behind the numbers*/
+    }
+    &:first-child:after{
+      content: none;
+    }
+    &.active:before{
+      background: #27AE60;
+      color: white;
+    }
+    &.active:after{
+      background: #27AE60;
+      color: white;
+    }
+  }
+}
