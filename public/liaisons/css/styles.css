@@ -481,7 +481,7 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 16px; /* 16px pour toutes les largeurs d'écran */
   font-size: 1.6rem;
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
@@ -511,7 +511,6 @@ h1--desktop,
 }
 h1--desktop:after,
 .titreNiveau1--desktop:after {
-  background-color: #358ae0;
   content: "";
   display: inline-block;
   width: 150px;
@@ -545,7 +544,7 @@ h3--desktop,
 }
 
 .texte {
-  font-family: Arial, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.375;
@@ -626,7 +625,7 @@ h3--desktop,
   text-decoration: underline;
 }
 .hyperlien--active {
-  color: #bbd531;
+  color: #DF0200;
   text-decoration: underline;
 }
 
@@ -636,7 +635,7 @@ h3--desktop,
 * @todo Compléter selon l'énoncé de l'exercice
 */
 .bouton {
-  background-color: #bbd531;
+  background-color: #DF0200;
   border-radius: 18px;
   color: black;
   padding: 0.5em 1em;
@@ -647,26 +646,44 @@ h3--desktop,
   margin-left: 0.4em;
 }
 .bouton--hover {
-  background-color: rgba(187, 213, 49, 0.75);
+  background-color: rgba(223, 2, 0, 0.75);
 }
 .bouton--active {
-  background-color: rgba(187, 213, 49, 0.5);
+  background-color: rgba(223, 2, 0, 0.5);
 }
 .bouton--inverse {
   background-color: white;
-  border: 2px solid #bbd531;
+  border: 2px solid #DF0200;
 }
 .bouton--inverse--hover {
-  border-color: rgba(187, 213, 49, 0.75);
+  border-color: rgba(223, 2, 0, 0.75);
 }
 .bouton--inverse--active {
-  border-color: rgba(187, 213, 49, 0.5);
+  border-color: rgba(223, 2, 0, 0.5);
 }
 
 /****** MODULES ******/
 html {
   height: 100%;
-  background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+  background: white;
+}
+
+.conteneur-logo {
+  display: flex;
+  background-color: #D8F8FF;
+}
+
+.logo {
+  width: 221px;
+  height: 136px;
+  margin: 15px 10px 10px 10%;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .logo {
+    width: 155px;
+    height: 96px;
+  }
 }
 
 .formulaire {
@@ -674,40 +691,58 @@ html {
   max-width: 800px;
   position: relative;
 }
-.formulaire fieldset {
-  background: white;
-  border: 0 none;
-  border-radius: 3px;
-  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-  padding: 20px 30px;
-  box-sizing: border-box;
-  width: 80%;
-  margin: 0 10%;
-  position: relative;
+@media (min-width: 600px) {
+  .formulaire fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: relative;
+  }
 }
-.formulaire .bouton-action {
-  width: 100px;
-  background: #27AE60;
-  font-weight: bold;
-  color: white;
-  border: 0 none;
-  border-radius: 1px;
-  cursor: pointer;
-  padding: 10px;
-  margin: 10px 5px;
-  text-decoration: none;
-  font-size: 14px;
-}
-.formulaire .bouton-action:hover {
-  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
-}
-
-.form-titre {
+.formulaire fieldset legend {
+  margin: 0;
+  padding: 0;
+  float: left;
+  margin-bottom: 0.5em;
+  width: 100%;
   font-family: Montserrat, sans-serif;
   font-size: 21px;
   text-transform: uppercase;
   color: #2C3E50;
-  margin-bottom: 10px;
+}
+.formulaire .bouton-action {
+  width: 100px;
+  font-weight: bold;
+  border: 0 none;
+  cursor: pointer;
+  line-height: 1.15;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px 5px;
+  text-decoration: none;
+  font-size: 14.5px;
+}
+.formulaire .soumettre {
+  background: #DF0200;
+  color: white;
+}
+.formulaire .soumettre:hover {
+  background-color: #C10604;
+}
+.formulaire .precedent {
+  background-color: white;
+  color: #DF0200;
+  border: 2px solid #DF0200;
+}
+.formulaire .precedent:hover {
+  background-color: #FDDDDC;
 }
 
 .barreprogres {
@@ -719,7 +754,8 @@ html {
 }
 .barreprogres li {
   list-style-type: none;
-  color: white;
+  font-family: Montserrat;
+  color: black;
   text-transform: uppercase;
   font-size: 16px;
   width: 33.33%;
@@ -729,35 +765,65 @@ html {
 .barreprogres li:before {
   content: counter(step);
   counter-increment: step;
-  width: 30px;
-  line-height: 30px;
+  width: 40px;
+  line-height: 40px;
   display: block;
   font-size: 16px;
   color: #333;
-  background: white;
-  border-radius: 4px;
+  background: #FCB900;
+  border-radius: 50%;
   margin: 0 auto 5px auto;
 }
 .barreprogres li:after {
   content: "";
   width: 100%;
-  height: 2px;
-  background: white;
+  height: 4px;
+  background: #FCB900;
   position: absolute;
   left: -50%;
-  top: 9px;
+  top: 20px;
   z-index: -1; /*put it behind the numbers*/
 }
 .barreprogres li:first-child:after {
   content: none;
 }
 .barreprogres li.active:before {
-  background: #27AE60;
+  background: #DF0200;
   color: white;
 }
 .barreprogres li.active:after {
-  background: #27AE60;
+  background: #DF0200;
   color: white;
+}
+
+.contour-champ {
+  border: 1px solid #CFD3D4;
+  border-radius: 4px;
+  margin-top: 1em;
+  padding: 0.5em;
+}
+
+.sous-titre-infos {
+  line-height: 1;
+  border-bottom: 1px dashed #CFD3D4;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  justify-items: left;
+}
+
+.img-enfants {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 284px) {
+  .img-enfants {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -51,53 +51,94 @@
 /****** MODULES ******/
 html {
   height: 100%;
-  background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+  background:white;
 }
+.conteneur-logo{
+  display: flex;
+  background-color: $bleuPale;
+}
+.logo{
+    width: 221px;
+    height: 136px;
+    margin: 15px 10px 10px 10%;
+    flex-shrink: 0;
+  @media (max-width: 600px) {
+    width: 155px;
+    height: 96px;
+  }
+}
+
 
 .formulaire {
   margin: 2em auto;
   max-width: 800px;
   position: relative;
   fieldset{
+    @media (min-width: 600px) {
     background: white;
     border: 0 none;
     border-radius: 3px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    //box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     padding: 20px 30px;
     box-sizing: border-box;
     width: 80%;
     margin: 0 10%;
     position: relative;
+    }
+    legend{
+      margin: 0;
+      padding: 0;
+      float: left;
+      margin-bottom: .5em;
+      width: 100%;
+      font-family: $fontePrimaire;
+      font-size: 21px;
+      text-transform: uppercase;
+      color: #2C3E50;
+    }
   }
- .bouton-action{
+ .bouton-action {
    width: 100px;
-   background: #27AE60;
    font-weight: bold;
-   color: white;
    border: 0 none;
-   border-radius: 1px;
+   cursor: pointer;
+   line-height: 1.15;
+   text-align: center;
+   border-radius: 4px;
    cursor: pointer;
    padding: 10px;
    margin: 10px 5px;
    text-decoration: none;
-   font-size: 14px;
-   &:hover{
-     box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
-   }
+   font-size: 14.5px;
  }
-}
+  .soumettre{
+    background: $rouge;
+    color: white;
+    &:hover{
+      background-color: #C10604;
+    }
+  }
+  .precedent{
+    background-color: white;
+    color:$rouge;
+    border: 2px solid $rouge;
+    &:hover{
+      background-color: #FDDDDC;
+    }
+  }
+
+ }
+
+
+
+
 //empiler les formulaire un par dessus les autres
 
 //form > fieldset:not(:first-of-type) {
 //  display: none;
 //}
-.form-titre{
-  font-family: $fontePrimaire;
-  font-size: 21px;
-  text-transform: uppercase;
-  color: #2C3E50;
-  margin-bottom: 10px;
-}
+
 .barreprogres{
   margin-bottom: 30px;
   overflow: hidden;
@@ -106,7 +147,8 @@ html {
   counter-reset: step;
   li{
     list-style-type: none;
-    color: white;
+    font-family: Montserrat;
+    color: black;
     text-transform: uppercase;
     font-size: 16px;
     width: 33.33%;
@@ -115,35 +157,73 @@ html {
     &:before{
       content: counter(step);
       counter-increment: step;
-      width: 30px;
-      line-height: 30px;
+      width: 40px;
+      line-height: 40px;
       display: block;
       font-size: 16px;
       color: #333;
-      background: white;
-      border-radius: 4px;
+      background: $jaune;
+      border-radius: 50%;
       margin: 0 auto 5px auto;
     }
     &:after{
       content:'';
       width: 100%;
-      height: 2px;
-      background: white;
+      height: 4px;
+      background: $jaune;
       position: absolute;
       left: -50%;
-      top: 9px;
+      top: 20px;
       z-index: -1; /*put it behind the numbers*/
     }
     &:first-child:after{
       content: none;
     }
     &.active:before{
-      background: #27AE60;
+      background: $rouge;
       color: white;
     }
     &.active:after{
-      background: #27AE60;
+      background: $rouge;
       color: white;
     }
   }
+
+}
+.contour-champ{
+  border: 1px solid #CFD3D4;
+  border-radius: 4px;
+  margin-top: 1em;
+  padding: .5em;
+}
+.sous-titre-infos{
+  line-height: 1;
+  border-bottom:1px dashed #CFD3D4;
+}
+//grille
+//.grid-container{
+//  @media (min-width: 600px) {
+//display: grid;
+//
+//grid-template-columns: auto auto;
+//  grid-template-rows: auto auto auto;
+//gap: 10px;
+//background-color: #2196F3;
+//padding: 10px;}
+//}
+.grid-container{
+  display: flex;
+  flex-direction: row;
+  justify-items: left;
+}
+
+
+.img-enfants{
+  @media (max-width: 284px) {
+    width: 100%;
+    height: auto;
+  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

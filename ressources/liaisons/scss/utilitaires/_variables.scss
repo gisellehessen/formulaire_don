@@ -17,20 +17,19 @@
 }
 
 $fontePrimaire : Montserrat, sans-serif;
-$fonteSecondaire : Arial, sans-serif;
 
 /** Palette de couleurs **/
 // Utiliser http://chir.ag/projects/name-that-color pour obtenir des noms uniques et mémorisables
 // Permettez-vous d'utiliser un nom de variable plus explicite si la suggestion de name-that-color est trop étrange
 
 /* Couleurs de base */
-$bleuMoyen: #358ae0;
-$bleuPale: #68a8e8;
-$vertLime: #bbd531;
+$jaune: #FCB900;
+$bleuPale: #D8F8FF;
+$rouge: #DF0200;
 $bleuMinuit: #012d61;
 $bleuMarin: #2678B5;
 
-$bleuMoyenTransparent : transparentize($bleuMoyen, 0.50);
+
 
 /* Autres couleurs */
 $hyperlien: $bleuMarin;
