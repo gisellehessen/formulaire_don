@@ -419,7 +419,7 @@ th {
 /** Polices de caractères **/
 @font-face {
   font-family: Montserrat, sans-serif;
-  @import url(https://fonts.googleapis.com/css?family=Montserrat);
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap");
 }
 /** Palette de couleurs **/
 /* Couleurs de base */
@@ -481,7 +481,7 @@ html {
 }
 
 body {
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   font-size: 16px; /* 16px pour toutes les largeurs d'écran */
   font-size: 1.6rem;
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
@@ -492,7 +492,7 @@ h2,
 .titreNiveau2,
 h3,
 .titreNiveau3 {
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   font-weight: 500;
 }
 
@@ -544,7 +544,7 @@ h3--desktop,
 }
 
 .texte {
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.375;
@@ -710,10 +710,16 @@ html {
   float: left;
   margin-bottom: 0.5em;
   width: 100%;
-  font-family: Montserrat, sans-serif;
-  font-size: 21px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 24px;
   text-transform: uppercase;
   color: #2C3E50;
+}
+.formulaire fieldset legend:after {
+  content: "";
+  display: block;
+  width: 200px;
+  border-bottom: 3px solid #FCB900;
 }
 .formulaire .bouton-action {
   width: 100px;
@@ -796,6 +802,16 @@ html {
   color: white;
 }
 
+@media (min-width: 600px) {
+  .conteneur-nom {
+    display: flex;
+    flex-direction: row;
+  }
+  .conteneur-nom .nom {
+    margin-left: 1em;
+  }
+}
+
 .contour-champ {
   border: 1px solid #CFD3D4;
   border-radius: 4px;
@@ -808,22 +824,43 @@ html {
   border-bottom: 1px dashed #CFD3D4;
 }
 
-.grid-container {
+.conteneur-expiration {
+  position: relative;
+  border: 1px solid #aaa;
   display: flex;
-  flex-direction: row;
-  justify-items: left;
+  width: 200px;
+  justify-content: space-around;
+  height: 36px;
+  line-height: 36px;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
-.img-enfants {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.conteneur-expiration:after {
+  content: "/";
+  position: absolute;
+  left: 50%;
+  margin-left: -4px;
+  color: #aaa;
 }
-@media (max-width: 284px) {
-  .img-enfants {
-    width: 100%;
-    height: auto;
-  }
+
+input.exp {
+  float: left;
+  border: 0;
+  width: 30px;
+  outline: none;
+  appearance: none;
+  font-size: 14px;
+}
+
+.input-type-texte {
+  height: 21px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.conteneur-icones i {
+  font-size: 38px; /* Ajustez cette valeur selon la taille désirée */
 }
 
 /*# sourceMappingURL=styles.css.map */

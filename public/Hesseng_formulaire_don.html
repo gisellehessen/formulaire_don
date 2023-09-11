@@ -43,7 +43,7 @@
                   <label for="montant_100">100.00$</label><br>
                 <input type="radio" name="montant_don" id="autre_montant" value="autre_montant">
                   <label for="autre_montant">Autre</label>
-                <input type="text" name="autre_montant" aria-label="Montant personnalisé"/><br>
+                <input class="input-type-texte" type="text" name="autre_montant" aria-label="Montant personnalisé" size="6"><br>
             </div>
             <button name="suivant" class="soumettre bouton-action">
                 <i class="fa-regular fa-circle-check"></i>
@@ -54,31 +54,37 @@
             <legend>Coordonées</legend>
             <p>Renseignements personnels</p>
             <div class="contour-champ">
-                <label for="prenom">Prénom<span aria-hidden="true" style="color: red">*</span></label><br>
-                <input type="text" required id="prenom" name="prenom"><br>
-                <label for="nom">Nom<span aria-hidden="true" style="color: red">*</span></label><br>
-                <input type="text" required id="nom" name="nom"><br>
+                <div class="conteneur-nom">
+                    <div class="prenom">
+                        <label for="prenom">Prénom<span aria-hidden="true" style="color: red">*</span></label><br>
+                        <input class="input-type-texte" type="text" required id="prenom" name="prenom" size="20"><br>
+                    </div>
+                    <div class="nom">
+                        <label for="nom">Nom<span aria-hidden="true" style="color: red">*</span></label><br>
+                        <input class="input-type-texte" type="text" required id="nom" name="nom" size="30">
+                    </div>
+                </div>
                 <p>Appellation</p>
                 <input type="radio" name="appellation" id="madame" value="madame">
                   <label for="madame">Madame</label><br>
                 <input type="radio" name="appellation" id="monsieur" value="monsieur">
                   <label for="monsieur">Monsieur</label><br>
                 <label for="email">Courriel<span aria-hidden="true" style="color: red">*</span></label><br>
-                <input type="email" required id="email" name="email" aria-describedby="email-description"><br>
+                <input type="email" class="input-type-texte" required id="email" name="email" aria-describedby="email-description" size="30"><br>
                 <label for="telephone">Téléphone<span aria-hidden="true" style="color:red">*</span></label><br>
-                <input type="tel" required id="telephone" name="telephone"><br>
+                <input type="tel" class="input-type-texte" required id="telephone" name="telephone"><br>
             </div>
             <p>Adresse</p>
             <div class="contour-champ">
                 <p>Pays<span aria-hidden="true" style="color: red">*</span></p>
                 <input type="radio" name="pays" id="canada" value="canada">
-                  <label for="canada">Canada</label><br>
+                <label for="canada">Canada</label><br>
                 <input type="radio" name="pays" id="france" value="france">
-                  <label for="france">France</label><br>
+                <label for="france">France</label><br>
                 <input type="radio" name="pays" id="etats_unis" value="etats_unis">
-                  <label for="etats_unis">États-Unis</label><br>
+                <label for="etats_unis">États-Unis</label>
                 <p>Province<span aria-hidden="true" style="color: red">*</span></p>
-                <select name="province" required id="province" aria-required="true">
+                <select class="input-type-texte" name="province" required id="province" aria-required="true">
                     <option value="AB">Alberta</option>
                     <option value="BC">British Columbia</option>
                     <option value="MB">Manitoba</option>
@@ -94,66 +100,68 @@
                     <option value="YT">Yukon</option>
                 </select><br>
                 <label for="ville">Ville<span aria-hidden="true" style="color:red">*</span></label><br>
-                <input type="text" required id="ville" name="ville" aria-required="true"><br>
+                <input type="text" class="input-type-texte" required id="ville" name="ville" aria-required="true"><br>
                 <label for="code_postal">Code postal<span aria-hidden="true" style="color:red">*</span></label><br>
-                <input type="text" required id="code_postal" name="code_postal" aria-required="true"><br>
+                <input type="text" class="input-type-texte" required id="code_postal" name="code_postal" aria-required="true" size="7"><br>
             </div>
             <input type="button" name="previous" class="precedent bouton-action" value="Précédent"/>
             <input type="button" name="suivant" class="soumettre bouton-action" value="Suivant"/>
         </fieldset>
         <fieldset>
             <legend>Paiement</legend>
-            <div class="grid-container">
-                <div class="renseignements_client">
-                    <p>Résumé des informations</p>
-                    <div class="contour-champ">
-                        <h2>Votre don</h2>
-                        <p class="sous-titre-infos">Montant du don</p>
-                        <p>30.00</p>
-                    </div>
-                    <div class="contour-champ">
-                        <h2>Renseignements personnels</h2>
-                        <p class="sous-titre-infos">Nom</p>
-                        <p>Patrick Favreau</p>
-                        <p class="sous-titre-infos">Adresse</p>
-                        <p>291, 58E rue est
-                            Quebec, Qc, G1G 2X3
-                            Canada</p>
-                        <p class="sous-titre-infos">Courriel</p>
-                        <p>patrickfavreau@gmail.com</p>
-                        <p class="sous-titre-infos">Téléphone</p>
-                        <p>(418) 531-3214</p>
-                    </div>
+            <div class="renseignements_client">
+                <p>Résumé des informations</p>
+                <div class="contour-champ">
+                    <h2>Votre don</h2>
+                    <p class="sous-titre-infos">Montant du don</p>
+                    <p>30.00</p>
                 </div>
-                <div>
-                <img class="img-enfants a" src="../images/enfants.png" width="284" height="401">
+                <div class="contour-champ">
+                    <h2>Renseignements personnels</h2>
+                    <p class="sous-titre-infos">Nom</p>
+                    <p>Patrick Favreau</p>
+                    <p class="sous-titre-infos">Adresse</p>
+                    <p>291, 58E rue est
+                        Quebec, Qc, G1G 2X3
+                        Canada</p>
+                    <p class="sous-titre-infos">Courriel</p>
+                    <p>patrickfavreau@gmail.com</p>
+                    <p class="sous-titre-infos">Téléphone</p>
+                    <p>(418) 531-3214</p>
                 </div>
             </div>
-                <p>Informations de paiement</p>
-                <div class="contour-champ">
-                    <div class="conteneur-icones" title="Méthodes de paiement acceptées">
-                        <i class="fa fa-cc-visa " style="color:navy;"></i>
-                        <i class="fa fa-cc-amex " style="color:blue;"></i>
-                        <i class="fa fa-cc-mastercard " style="color:red;"></i>
-                        <i class="fa fa-cc-discover " style="color:orange;"></i>
-                    </div>
-                    <label for="nomcarte">Nom sur la carte<span aria-hidden="true"
-                                                                style="color: red">*</span></label>
-                    <input type="text" id="nomcarte" name="nomcarte" aria-required="true"><br>
-                    <label for="numerocarte">Numéro de la carte<span aria-hidden="true"
-                                                                     style="color: red">*</span></label>
-                    <input type="text" id="numerocarte" name="numerocarte" aria-required="true"><br>
-                    <label for="expmois">Mois d'expiration<span aria-hidden="true"
-                                                                style="color: red">*</span></label>
-                    <input type="text" id="expmois" name="expmois" aria-required="true"><br>
-                    <label for="expannee">Année d'expiration<span aria-hidden="true"
-                                                                  style="color: red">*</span></label>
-                    <input type="text" id="expannee" name="expannee" aria-required="true"><br>
-                    <label for="cvv">CVV<span aria-hidden="true" style="color: red">*</span></label>
-                    <input type="text" id="cvv" name="cvv" aria-required="true"><br>
+            <p>Informations de paiement</p>
+            <div class="contour-champ">
+                <div class="conteneur-icones" title="Méthodes de paiement acceptées">
+                    <i class="fa fa-cc-visa " style="color:navy;"></i>
+                    <i class="fa fa-cc-amex " style="color:blue;"></i>
+                    <i class="fa fa-cc-mastercard " style="color:red;"></i>
+                    <i class="fa fa-cc-discover " style="color:orange;"></i>
                 </div>
-                <input type="button" name="precedent" class="precedent bouton-action" value="Précédent"/>
-                <a href="" class="soumettre bouton-action" target="_top">Soumettre</a>
+                <label for="nomcarte">Nom sur la carte<span aria-hidden="true"
+                                                            style="color: red">*</span></label><br>
+                <input type="text" class="input-type-texte" id="nomcarte" name="nomcarte" aria-required="true" size="30"><br>
+                <label for="numerocarte">Numéro de la carte<span aria-hidden="true"
+                                                                 style="color: red">*</span></label><br>
+                <input type="text" class="input-type-texte" id="numerocarte" name="numerocarte" aria-required="true" size="16"><br>
+                <!--                    <label for="expmois">Mois d'expiration<span aria-hidden="true"-->
+                <!--                                                                style="color: red">*</span></label>-->
+                <!--                    <input type="text" id="expmois" name="expmois" aria-required="true"><br>-->
+                <!--                    <label for="expannee">Année d'expiration<span aria-hidden="true"-->
+                <!--                                                                  style="color: red">*</span></label>-->
+                <!--                    <input type="text" id="expannee" name="expannee" aria-required="true"><br>-->
+                <p>Expiration Ex: 05/28</p>
+                <div class="conteneur-expiration">
+                    <input autocomplete="off" class="exp" id="mois" maxlength="2" pattern="[0-9]*" inputmode="numerical"
+                           placeholder="MM" type="text" data-pattern-validate/>
+                    <input autocomplete="off" class="exp" id="annee" maxlength="2" pattern="[0-9]*"
+                           inputmode="numerical" placeholder="AA" type="text" data-pattern-validate/>
+                </div>
+                <label for="cvv">CVV<span aria-hidden="true" style="color: red">*</span></label><br>
+                <input type="text" class="input-type-texte" id="cvv" name="cvv" aria-required="true" size="3"><br>
+            </div>
+            <input type="button" name="precedent" class="precedent bouton-action" value="Précédent"/>
+            <a href="" class="soumettre bouton-action" target="_top">Soumettre</a>
         </fieldset>
     </form>
 </main>

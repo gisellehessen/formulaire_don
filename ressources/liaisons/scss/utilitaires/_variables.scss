@@ -12,11 +12,11 @@
 @font-face {
   font-family: Montserrat, sans-serif;
 
-  @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
 
 }
 
-$fontePrimaire : Montserrat, sans-serif;
+$fontePrimaire : Montserrat, Arial, sans-serif;
 
 /** Palette de couleurs **/
 // Utiliser http://chir.ag/projects/name-that-color pour obtenir des noms uniques et mémorisables

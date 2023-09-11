@@ -86,6 +86,7 @@ html {
     margin: 0 10%;
     position: relative;
     }
+
     legend{
       margin: 0;
       padding: 0;
@@ -93,9 +94,15 @@ html {
       margin-bottom: .5em;
       width: 100%;
       font-family: $fontePrimaire;
-      font-size: 21px;
+      font-size: 24px;
       text-transform: uppercase;
       color: #2C3E50;
+      &:after{
+        content: "";
+        display: block;
+        width: 200px;
+        border-bottom: 3px solid $jaune;
+      }
     }
   }
  .bouton-action {
@@ -187,9 +194,18 @@ html {
       background: $rouge;
       color: white;
     }
+  }}
+//conteneur nom mise en forme
+.conteneur-nom{
+  @media (min-width: 600px) {
+    display: flex;
+    flex-direction: row;
+    .nom {
+      margin-left: 1em;
+    }
   }
-
 }
+
 .contour-champ{
   border: 1px solid #CFD3D4;
   border-radius: 4px;
@@ -199,31 +215,44 @@ html {
 .sous-titre-infos{
   line-height: 1;
   border-bottom:1px dashed #CFD3D4;
+  //telecharger police et lier
 }
-//grille
-//.grid-container{
-//  @media (min-width: 600px) {
-//display: grid;
-//
-//grid-template-columns: auto auto;
-//  grid-template-rows: auto auto auto;
-//gap: 10px;
-//background-color: #2196F3;
-//padding: 10px;}
-//}
-.grid-container{
+.conteneur-expiration {
+  position: relative;
+  border: 1px solid #aaa;
   display: flex;
-  flex-direction: row;
-  justify-items: left;
+  width: 200px;
+  justify-content: space-around;
+  height: 36px;
+  line-height: 36px;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
+.conteneur-expiration:after {
+  content: '/';
+  position: absolute;
+  left: 50%;
+  margin-left: -4px;
+  color: #aaa;
+}
 
-.img-enfants{
-  @media (max-width: 284px) {
-    width: 100%;
-    height: auto;
-  }
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+input.exp {
+  float: left;
+  border: 0;
+  width: 30px;
+  outline: none;
+  appearance: none;
+  font-size: 14px;
+}
+//changer la forme des champs input
+.input-type-texte{
+  height: 21px;
+  //background-color: #F2F2F2;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.conteneur-icones i {
+  font-size: 38px; /* Ajustez cette valeur selon la taille désirée */
 }
