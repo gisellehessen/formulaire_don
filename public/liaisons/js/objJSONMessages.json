@@ -1,0 +1,67 @@
+{
+  "don": {
+    "vide": "Veuillez choisir un type de don."
+  },
+  "montant": {
+    "vide": "Vous devez sélectionner un montant."
+  },
+  "prenom": {
+    "vide": "Vous devez entrer votre prénom.",
+    "pattern": "Pour le prénom, les accents français, les espaces, les tirets et les apostrophes sont permis."
+  },
+  "nom": {
+    "vide": "Vous devez entrer votre nom de famille.",
+    "pattern": "Pour le nom de famille, les accents français, les espaces, les tirets et les apostrophes sont permis."
+  },
+  "genre": {
+    "vide": "Vous devez choisir un genre."
+  },
+  "courriel": {
+    "vide": "Vous devez entrer votre adresse courriel.",
+    "pattern": "L'adresse e-mail doit être au format valide (par exemple, exemple@domaine.com)."
+  },
+  "telephone": {
+    "vide": "Vous devez entrer un numéro de téléphone.",
+    "pattern": "Le numéro de téléphone doit comporter 10 chiffres."
+  },
+  "pays": {
+    "vide": "Vous devez choisir un pays."
+  },
+  "province": {
+    "vide": "Vous devez choisir une province."
+  },
+  "ville": {
+    "vide": "Le champ Ville ne peut pas être vide.",
+    "pattern": "Le champ Ville ne peut contenir que des lettres et des espaces."
+  },
+  "codePostal": {
+    "vide": "Le champ Code postal ne peut pas être vide.",
+    "pattern": "Le code postal canadien doit être au format A1A 1A1 (par exemple, K1M 2R2)."
+  },
+  "nomCarte": {
+    "vide": "Le champ Nom sur la carte ne peut pas être vide.",
+    "longueurIncorrecte": "Le nom sur la carte doit contenir au moins 2 caractères.",
+    "pattern": "Pour le nom, les accents français, les espaces, les tirets et les apostrophes sont permis."
+  },
+  "numCarte": {
+    "vide": "Le champ Numéro de carte ne peut pas être vide.",
+    "pattern": "Le numéro de carte doit contenir 16 chiffres."
+  },
+  "moisExp": {
+    "vide": "Le champ Mois d'expiration ne peut pas être vide.",
+    "pattern": "Le mois d'expiration doit être au format MM (par exemple, 01 pour janvier).",
+    "moisInvalide": "Le mois d'expiration doit être compris entre 01 (janvier) et 12 (décembre)."
+  },
+  "anneeExp": {
+    "vide": "Le champ Année d'expiration ne peut pas être vide.",
+    "pattern": "L'année d'expiration doit être au format AA (par exemple, 23 pour 2023).",
+    "anneeInvalide": "L'année d'expiration doit être supérieure ou égale à l'année en cours."
+  },
+  "cvv": {
+    "vide": "Le champ CVV ne peut pas être vide.",
+    "pattern": "Le CVV doit contenir 3 ou 4 chiffres."
+  },
+  "message": {
+    "vide": "Entrez un message."
+  }
+}
