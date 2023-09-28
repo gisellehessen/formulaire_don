@@ -22,7 +22,7 @@
   },
   "telephone": {
     "vide": "Vous devez entrer un numéro de téléphone.",
-    "pattern": "Le numéro de téléphone doit comporter 10 chiffres."
+    "pattern": "Le numéro de téléphone doit comporter 10 chiffres(par exemple, 4199062899)."
   },
   "pays": {
     "vide": "Vous devez choisir un pays."
@@ -34,28 +34,25 @@
     "vide": "Le champ Ville ne peut pas être vide.",
     "pattern": "Le champ Ville ne peut contenir que des lettres et des espaces."
   },
-  "codePostal": {
+  "code_postal": {
     "vide": "Le champ Code postal ne peut pas être vide.",
     "pattern": "Le code postal canadien doit être au format A1A 1A1 (par exemple, K1M 2R2)."
   },
-  "nomCarte": {
+  "nom_carte": {
     "vide": "Le champ Nom sur la carte ne peut pas être vide.",
-    "longueurIncorrecte": "Le nom sur la carte doit contenir au moins 2 caractères.",
     "pattern": "Pour le nom, les accents français, les espaces, les tirets et les apostrophes sont permis."
   },
-  "numCarte": {
+  "numero_carte": {
     "vide": "Le champ Numéro de carte ne peut pas être vide.",
     "pattern": "Le numéro de carte doit contenir 16 chiffres."
   },
-  "moisExp": {
+  "mois": {
     "vide": "Le champ Mois d'expiration ne peut pas être vide.",
-    "pattern": "Le mois d'expiration doit être au format MM (par exemple, 01 pour janvier).",
-    "moisInvalide": "Le mois d'expiration doit être compris entre 01 (janvier) et 12 (décembre)."
+    "pattern": "Le mois d'expiration doit être compris entre 01 (janvier) et 12 (décembre)."
   },
-  "anneeExp": {
+  "annee": {
     "vide": "Le champ Année d'expiration ne peut pas être vide.",
-    "pattern": "L'année d'expiration doit être au format AA (par exemple, 23 pour 2023).",
-    "anneeInvalide": "L'année d'expiration doit être supérieure ou égale à l'année en cours."
+    "pattern": "L'année d'expiration doit être supérieure ou égale à l'année en cours."
   },
   "cvv": {
     "vide": "Le champ CVV ne peut pas être vide.",

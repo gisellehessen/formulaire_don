@@ -138,29 +138,26 @@ html {
  }
 
 
-
-
-//empiler les formulaire un par dessus les autres
-
-//form > fieldset:not(:first-of-type) {
-//  display: none;
-//}
-
 .barreprogres{
-  margin-bottom: 30px;
+  margin:0 25px 30px auto ;
   overflow: hidden;
   text-align: center;
-  /*CSS counters to number the steps*/
   counter-reset: step;
+
+  &.active{
+    width: 100%; /* Largeur maximale lorsque l'étape est active */
+    transition: width 0.5s ease; /* Durée et fonction de transition */
+  }
   li{
     list-style-type: none;
-    font-family: Montserrat;
+    font-family: $fontePrimaire;
     color: black;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 14px;
     width: 33.33%;
     float: left;
     position: relative;
+    @media (min-width: 600px) { font-size: 16px;}
     &:before{
       content: counter(step);
       counter-increment: step;
@@ -171,7 +168,7 @@ html {
       color: #333;
       background: $jaune;
       border-radius: 50%;
-      margin: 0 auto 5px auto;
+      margin: 0 auto 10px auto;
     }
     &:after{
       content:'';
@@ -195,6 +192,7 @@ html {
       color: white;
     }
   }}
+
 //conteneur nom mise en forme
 .conteneur-nom{
   @media (min-width: 600px) {
@@ -256,3 +254,56 @@ input.exp {
 .conteneur-icones i {
   font-size: 38px; /* Ajustez cette valeur selon la taille désirée */
 }
+
+//style des messages d'erreur'
+.formulaire__erreur{
+  font-size: 0.9em;
+  color: #D32F2F;
+
+}
+.formulaire__item--erreur{
+  border:1px solid #D32F2F;
+  //position: relative;
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before, #progressbar li.active:after {
+  background: #ee0979;
+  color: white;
+}
+.conteneur_boutons{
+  display: flex;
+  flex-direction: row;
+  @media (min-width: 600px) {
+    margin-top: 1em;
+    margin-left: 4.7em;
+  }
+}
+
+/* Masquer tous les fieldset par défaut */
+fieldset {
+  display: none;
+  opacity: 1; /* Opacité initiale */
+  transition: opacity 0.5s ease-in-out; /* Transition d'opacité */
+
+}
+/* Lorsque le fieldset est masqué, diminue l'opacité pour le faire disparaître en fondu */
+fieldset.hidden {
+  opacity: 0; /* Opacité lorsque masqué */
+  pointer-events: none; /* Désactive les interactions avec les éléments masqués */
+  height: 0; /* Ajuste la hauteur à 0 pour masquer complètement */
+}
+
+/* Afficher le fieldset de l'étape actuelle */
+fieldset.etape-1 {
+  display: block;
+}
+
+//mettre croix devant messages d'erreur'
+//span::before {
+//  content: url('../public/liaisons/images/erreur.svg');
+//  display: inline-block;
+//  width: 20px; /* Ajustez la largeur en fonction de vos besoins */
+//  height: 20px; /* Ajustez la hauteur en fonction de vos besoins */
+//  margin-right: 5px; /* Ajustez la marge droite en fonction de vos besoins */
+//}

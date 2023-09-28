@@ -752,21 +752,29 @@ html {
 }
 
 .barreprogres {
-  margin-bottom: 30px;
+  margin: 0 25px 30px auto;
   overflow: hidden;
   text-align: center;
-  /*CSS counters to number the steps*/
   counter-reset: step;
+}
+.barreprogres.active {
+  width: 100%; /* Largeur maximale lorsque l'étape est active */
+  transition: width 0.5s ease; /* Durée et fonction de transition */
 }
 .barreprogres li {
   list-style-type: none;
-  font-family: Montserrat;
+  font-family: Montserrat, Arial, sans-serif;
   color: black;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 14px;
   width: 33.33%;
   float: left;
   position: relative;
+}
+@media (min-width: 600px) {
+  .barreprogres li {
+    font-size: 16px;
+  }
 }
 .barreprogres li:before {
   content: counter(step);
@@ -778,7 +786,7 @@ html {
   color: #333;
   background: #FCB900;
   border-radius: 50%;
-  margin: 0 auto 5px auto;
+  margin: 0 auto 10px auto;
 }
 .barreprogres li:after {
   content: "";
@@ -861,6 +869,52 @@ input.exp {
 
 .conteneur-icones i {
   font-size: 38px; /* Ajustez cette valeur selon la taille désirée */
+}
+
+.formulaire__erreur {
+  font-size: 0.9em;
+  color: #D32F2F;
+}
+
+.formulaire__item--erreur {
+  border: 1px solid #D32F2F;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before, #progressbar li.active:after {
+  background: #ee0979;
+  color: white;
+}
+
+.conteneur_boutons {
+  display: flex;
+  flex-direction: row;
+}
+@media (min-width: 600px) {
+  .conteneur_boutons {
+    margin-top: 1em;
+    margin-left: 4.7em;
+  }
+}
+
+/* Masquer tous les fieldset par défaut */
+fieldset {
+  display: none;
+  opacity: 1; /* Opacité initiale */
+  transition: opacity 0.5s ease-in-out; /* Transition d'opacité */
+}
+
+/* Lorsque le fieldset est masqué, diminue l'opacité pour le faire disparaître en fondu */
+fieldset.hidden {
+  opacity: 0; /* Opacité lorsque masqué */
+  pointer-events: none; /* Désactive les interactions avec les éléments masqués */
+  height: 0; /* Ajuste la hauteur à 0 pour masquer complètement */
+}
+
+/* Afficher le fieldset de l'étape actuelle */
+fieldset.etape-1 {
+  display: block;
 }
 
 /*# sourceMappingURL=styles.css.map */
