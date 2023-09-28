@@ -2,55 +2,62 @@
 <html lang="fr">
 
 <head>
-    <meta charset="utf-8"/>
-    <title>Formulaire de dons pour Enfant Soleil</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulaire de dons pour Enfant Soleil</title>
     <link rel="icon" type="image/x-icon" href="../images/don.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="liaisons/css/styles.css">
 </head>
+
 <body>
 <header class="conteneur-logo">
-    <img class="logo" src="../images/logo.png">
+    <img class="logo" src="../images/logo.png" alt="Logo Enfant Soleil">
 </header>
+
 <main>
     <!-- Formulaire avec étapes -->
     <form class="formulaire" action="confirmation.html" method="get">
-        <!-- Barre progrès -->
+        <!-- Barre de progression -->
         <ul class="barreprogres" id="barreprogres">
             <li class="active">Transaction</li>
-            <li>coordonnées</li>
+            <li>Coordonnées</li>
             <li>Paiement</li>
         </ul>
+
+        <!-- Étape 1: Votre don -->
         <fieldset class="etape-0">
             <legend>Votre don</legend>
             <p>Type de don<span aria-hidden="true" style="color:red">*</span></p>
             <div class="contour-champ">
-                  <input type="radio" name="type_don" id="don_unique" value="don_unique">
-                  <label for="don_unique">Don Unique</label><br>
-                  <input type="radio" name="type_don" id="don_mensuel" value="don_mensuel">
-                  <label for="don_mensuel">Parent Soleil - Don mensuel</label>
+                <input type="radio" name="type_don" id="don_unique" value="don_unique">
+                <label for="don_unique">Don Unique</label><br>
+                <input type="radio" name="type_don" id="don_mensuel" value="don_mensuel">
+                <label for="don_mensuel">Parent Soleil - Don mensuel</label>
             </div>
             <span class="formulaire__erreur" id="err_don"></span>
+
             <p>Montant du don<span aria-hidden="true" style="color:red">*</span></p>
             <div class="contour-champ">
                 <input type="radio" name="montant_don" id="montant_30" value="30">
-                  <label for="montant_30">30.00$</label><br>
+                <label for="montant_30">30.00$</label><br>
                 <input type="radio" name="montant_don" id="montant_50" value="50">
-                  <label for="montant_50">50.00$</label><br>
+                <label for="montant_50">50.00$</label><br>
                 <input type="radio" name="montant_don" id="montant_75" value="75">
-                  <label for="montant_50">75.00$</label><br>
+                <label for="montant_75">75.00$</label><br>
                 <input type="radio" name="montant_don" id="montant_100" value="100">
-                  <label for="montant_100">100.00$</label><br>
+                <label for="montant_100">100.00$</label><br>
                 <input type="radio" name="montant_don" id="autre_montant" value="autre_montant">
-                  <label for="autre_montant">Autre</label>
+                <label for="autre_montant">Autre</label>
                 <input class="input-type-texte" type="text" name="autre_montant" aria-label="Montant personnalisé"
                        size="6"><br>
             </div>
             <span class="formulaire__erreur" id="err_montant_don"></span>
         </fieldset>
+
+        <!-- Étape 2: Coordonnées -->
         <fieldset class="etape-1">
-            <legend>Coordonées</legend>
+            <legend>Coordonnées</legend>
             <p>Renseignements personnels</p>
             <div class="contour-champ">
                 <div class="conteneur-nom">
@@ -69,13 +76,14 @@
                 </div>
                 <p>Appellation</p>
                 <input type="radio" name="appellation" id="madame" value="madame">
-                  <label for="madame">Madame</label><br>
+                <label for="madame">Madame</label><br>
                 <input type="radio" name="appellation" id="monsieur" value="monsieur">
-                  <label for="monsieur">Monsieur</label><br>
+                <label for="monsieur">Monsieur</label><br>
                 <span class="formulaire__erreur" id="err_genre"></span><br>
                 <label for="courriel">Courriel<span aria-hidden="true" style="color: red">*</span></label><br>
                 <input type="email" class="input-type-texte" required id="courriel" name="courriel"
-                       aria-describedby="email-description" size="30" pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,4})+)$"><br>
+                       aria-describedby="email-description" size="30"
+                       pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,4})+)$"><br>
                 <span class="formulaire__erreur" id="err_courriel"></span><br>
                 <label for="telephone">Téléphone<span aria-hidden="true" style="color:red">*</span></label><br>
                 <input type="tel" class="input-type-texte" required id="telephone" name="telephone" maxlength="10"
@@ -120,6 +128,8 @@
                 <span class="formulaire__erreur" id="err_code_postal"></span><br>
             </div>
         </fieldset>
+
+        <!-- Étape 3: Paiement -->
         <fieldset class="etape-2">
             <legend>Paiement</legend>
             <div class="renseignements_client">
@@ -141,13 +151,14 @@
                     <p>(418) 906-2035</p>
                 </div>
             </div>
+
             <p>Informations de paiement</p>
             <div class="contour-champ">
                 <div class="conteneur-icones" title="Méthodes de paiement acceptées">
-                    <i class="fa fa-cc-visa " style="color:navy;"></i>
-                    <i class="fa fa-cc-amex " style="color:blue;"></i>
-                    <i class="fa fa-cc-mastercard " style="color:red;"></i>
-                    <i class="fa fa-cc-discover " style="color:orange;"></i>
+                    <i class="fa fa-cc-visa fa-2x" style="color:navy;"></i>
+                    <i class="fa fa-cc-amex fa-2x" style="color:blue;"></i>
+                    <i class="fa fa-cc-mastercard fa-2x" style="color:red;"></i>
+                    <i class="fa fa-cc-discover fa-2x" style="color:orange;"></i>
                 </div>
                 <label for="nom_carte">Nom sur la carte<span aria-hidden="true"
                                                              style="color: red">*</span></label><br>
@@ -156,30 +167,40 @@
                 <span class="formulaire__erreur" id="err_nom_carte"></span><br>
                 <label for="numero_carte">Numéro de la carte<span aria-hidden="true"
                                                                   style="color: red">*</span></label><br>
-                <input type="text" class="input-type-texte" id="numero_carte" name="numero_carte" aria-required="true"
-                       size="16" ><br>
+                <input type="text" class="input-type-texte" id="numero_carte" name="numero_carte"
+                       aria-required="true" size="16"><br>
                 <span class="formulaire__erreur" id="err_numero_carte"></span><br>
                 <p>Expiration Ex: 05/28</p>
                 <div class="conteneur-expiration">
-                    <input autocomplete="off" class="exp" id="mois" maxlength="2" name="mois" pattern="^(0[1-9]|1[0-2])$" inputmode="numerical" placeholder="MM" type="text"/>
-                    <input autocomplete="off" class="exp" id="annee" maxlength="2" name="annee" pattern="^(2[4-9]|[3-9]\d)$" inputmode="numerical" placeholder="AA" type="text"/>
+                    <input autocomplete="off" class="exp" id="mois" maxlength="2" name="mois"
+                           pattern="^(0[1-9]|1[0-2])$" inputmode="numerical" placeholder="MM" type="text" />
+                    <input autocomplete="off" class="exp" id="annee" maxlength="2" name="annee"
+                           pattern="^(2[4-9]|[3-9]\d)$" inputmode="numerical" placeholder="AA" type="text" />
                 </div>
                 <span class="formulaire__erreur" id="err_annee"></span><br>
                 <span class="formulaire__erreur" id="err_mois"></span><br>
                 <label for="cvv">CVV<span aria-hidden="true" style="color: red">*</span></label><br>
-                <input type="text" class="input-type-texte" id="cvv" name="cvv" aria-required="true" pattern="^\d{3,4}$" size="4"><br>
+                <input type="text" class="input-type-texte" id="cvv" name="cvv" aria-required="true"
+                       pattern="^\d{3,4}$" size="4"><br>
                 <span class="formulaire__erreur" id="err_cvv"></span>
             </div>
         </fieldset>
+
         <div class="conteneur_boutons">
-            <input type="button" id="bouton-precedent" name="precedent" class="precedent bouton-action" value="Précédent" style="display: none;" />
-            <input type="button" id="bouton-suivant" name="suivant" class="soumettre bouton-action" value="Suivant" />
-            <button type=submit href="confirmation.html" class="soumettre bouton-action" hidden="hidden">Soumettre</button>
+            <input type="button" id="bouton-precedent" name="precedent" class="precedent bouton-action"
+                   value="Précédent" style="display: none;" />
+            <input type="button" id="bouton-suivant" name="suivant" class="soumettre bouton-action"
+                   value="Suivant" />
+            <button type="submit" href="confirmation.html" class="soumettre bouton-action"
+                    hidden="hidden">Soumettre</button>
         </div>
     </form>
+
     <script src="liaisons/js/validation.js"></script>
     <script>
         validation.chargeJSON("liaisons/js/objJSONMessages.json");
     </script>
 </main>
 </body>
+
+</html>

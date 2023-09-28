@@ -1,29 +1,4 @@
 @charset "UTF-8";
-/**
- * @author Prenom Nom courriel
- * @todo Lier les modules avec des instructions @import
- * @todo Compléter selon l'énoncé de l'exercice
- */
-/*
- * ------------------
- * TABLE DES MATIERES
- * ------------------
- * Librairies
- ** Normalize
- * UTILITAIRES
- ** Variables
- ** Mixins
- * BASE
- ** Typographie
- ** Hyperliens
- ** Boutons
- * MODULES
- ** gds - Styles généraux du Guide de styles
- ** palette - Palette de couleurs
- ** listeInteractivite - Éléments interactifs
- */
-/****** Librairies ******/
-/** Normalize **/
 /*! normalize.scss v0.1.0 | MIT License | based on git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -406,8 +381,6 @@ th {
   padding: 0;
 }
 
-/**** UTILITAIRES ****/
-/** Variables **/
 /**
 * @author Prenom Nom courriel
 * @todo Importer la fonte Futura
@@ -425,7 +398,6 @@ th {
 /* Couleurs de base */
 /* Autres couleurs */
 /** Points de rupture **/
-/** Mixins **/
 /**
 * @author Ève Février - efevrier@cegep-ste-foy.qc.ca
 * @author Yves Hélie - yves.helie@cegep-ste-foy.qc.ca
@@ -467,8 +439,6 @@ th {
 }
 
 /******** Typographie *********/
-/****** BASE ******/
-/** Typographie **/
 /**
 * @author Prenom Nom courriel
 * @todo Préciser l’interlignage sur le body pour l’écran large
@@ -608,7 +578,6 @@ h3--desktop,
     width: 100%;
   }
 }
-/** Hyperliens **/
 /**
 * @author Prenom Nom courriel
 * @todo Compléter selon l'énoncé de l'exercice
@@ -629,7 +598,6 @@ h3--desktop,
   text-decoration: underline;
 }
 
-/** Boutons **/
 /**
 * @author Prenom Nom courriel
 * @todo Compléter selon l'énoncé de l'exercice
@@ -662,7 +630,6 @@ h3--desktop,
   border-color: rgba(223, 2, 0, 0.5);
 }
 
-/****** MODULES ******/
 html {
   height: 100%;
   background: white;
@@ -689,7 +656,6 @@ html {
 .formulaire {
   margin: 2em auto;
   max-width: 800px;
-  position: relative;
 }
 @media (min-width: 600px) {
   .formulaire fieldset {
@@ -758,8 +724,8 @@ html {
   counter-reset: step;
 }
 .barreprogres.active {
-  width: 100%; /* Largeur maximale lorsque l'étape est active */
-  transition: width 0.5s ease; /* Durée et fonction de transition */
+  width: 100%;
+  transition: width 0.5s ease;
 }
 .barreprogres li {
   list-style-type: none;
@@ -796,7 +762,7 @@ html {
   position: absolute;
   left: -50%;
   top: 20px;
-  z-index: -1; /*put it behind the numbers*/
+  z-index: -1;
 }
 .barreprogres li:first-child:after {
   content: none;
@@ -861,16 +827,6 @@ input.exp {
   font-size: 14px;
 }
 
-.input-type-texte {
-  height: 21px;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-}
-
-.conteneur-icones i {
-  font-size: 38px; /* Ajustez cette valeur selon la taille désirée */
-}
-
 .formulaire__erreur {
   font-size: 0.9em;
   color: #D32F2F;
@@ -880,8 +836,6 @@ input.exp {
   border: 1px solid #D32F2F;
 }
 
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
 #progressbar li.active:before, #progressbar li.active:after {
   background: #ee0979;
   color: white;
@@ -898,21 +852,12 @@ input.exp {
   }
 }
 
-/* Masquer tous les fieldset par défaut */
 fieldset {
   display: none;
-  opacity: 1; /* Opacité initiale */
-  transition: opacity 0.5s ease-in-out; /* Transition d'opacité */
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
-/* Lorsque le fieldset est masqué, diminue l'opacité pour le faire disparaître en fondu */
-fieldset.hidden {
-  opacity: 0; /* Opacité lorsque masqué */
-  pointer-events: none; /* Désactive les interactions avec les éléments masqués */
-  height: 0; /* Ajuste la hauteur à 0 pour masquer complètement */
-}
-
-/* Afficher le fieldset de l'étape actuelle */
 fieldset.etape-1 {
   display: block;
 }

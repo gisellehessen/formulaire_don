@@ -1,93 +1,66 @@
 @charset "UTF-8";
 
-/**
- * @author Prenom Nom courriel
- * @todo Lier les modules avec des instructions @import
- * @todo Compléter selon l'énoncé de l'exercice
- */
+// Auteur: [Giselle Hessen]
+// Description: [feuille de style pour formulaire de don enfant soleil]
 
-/*
- * ------------------
- * TABLE DES MATIERES
- * ------------------
- * Librairies
- ** Normalize
- * UTILITAIRES
- ** Variables
- ** Mixins
- * BASE
- ** Typographie
- ** Hyperliens
- ** Boutons
- * MODULES
- ** gds - Styles généraux du Guide de styles
- ** palette - Palette de couleurs
- ** listeInteractivite - Éléments interactifs
- */
 
-/****** Librairies ******/
-
-/** Normalize **/
+// Importation de la bibliothèque Normalize.css
 @import '../../../node_modules/normalize.scss/normalize.scss';
-/**** UTILITAIRES ****/
 
-/** Variables **/
-@import 'utilitaires/variables';
+// Importation des fichiers utilitaires
+@import 'utilitaires/variables'; // Variables SCSS
+@import 'utilitaires/mixins';   // Mixins SCSS
 
-/** Mixins **/
-@import 'utilitaires/mixins';
+// Styles de base
+@import 'base/typo';        // Typographie de base
+@import 'base/grille';      // Système de grille
+@import 'base/hyperlien';   // Styles pour les liens
+@import 'base/bouton';      // Styles pour les boutons
 
-/****** BASE ******/
-
-/** Typographie **/
-@import 'base/typo';
-@import 'base/grille';
-/** Hyperliens **/
-@import 'base/hyperlien';
-
-/** Boutons **/
-@import 'base/bouton';
-
-/****** MODULES ******/
+// Styles des modules
 html {
   height: 100%;
-  background:white;
+  background: white;
 }
-.conteneur-logo{
+
+.conteneur-logo {
   display: flex;
   background-color: $bleuPale;
 }
-.logo{
-    width: 221px;
-    height: 136px;
-    margin: 15px 10px 10px 10%;
-    flex-shrink: 0;
+
+.logo {
+  width: 221px;
+  height: 136px;
+  margin: 15px 10px 10px 10%;
+  flex-shrink: 0;
+
   @media (max-width: 600px) {
     width: 155px;
     height: 96px;
   }
 }
 
-
+// Formulaire
 .formulaire {
   margin: 2em auto;
   max-width: 800px;
-  position: relative;
-  fieldset{
+
+  fieldset {
     @media (min-width: 600px) {
-    background: white;
-    border: 0 none;
-    border-radius: 3px;
-    //box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    padding: 20px 30px;
-    box-sizing: border-box;
-    width: 80%;
-    margin: 0 10%;
-    position: relative;
+      background: white;
+      border: 0 none;
+      border-radius: 3px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      padding: 20px 30px;
+      box-sizing: border-box;
+      width: 80%;
+      margin: 0 10%;
+      position: relative;
     }
 
-    legend{
+    legend {
       margin: 0;
       padding: 0;
       float: left;
@@ -97,7 +70,8 @@ html {
       font-size: 24px;
       text-transform: uppercase;
       color: #2C3E50;
-      &:after{
+
+      &:after {
         content: "";
         display: block;
         width: 200px;
@@ -105,50 +79,56 @@ html {
       }
     }
   }
- .bouton-action {
-   width: 100px;
-   font-weight: bold;
-   border: 0 none;
-   cursor: pointer;
-   line-height: 1.15;
-   text-align: center;
-   border-radius: 4px;
-   cursor: pointer;
-   padding: 10px;
-   margin: 10px 5px;
-   text-decoration: none;
-   font-size: 14.5px;
- }
-  .soumettre{
+
+  // Styles pour les boutons d'action
+  .bouton-action {
+    width: 100px;
+    font-weight: bold;
+    border: 0 none;
+    cursor: pointer;
+    line-height: 1.15;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px 5px;
+    text-decoration: none;
+    font-size: 14.5px;
+  }
+
+  .soumettre {
     background: $rouge;
     color: white;
-    &:hover{
+
+    &:hover {
       background-color: #C10604;
     }
   }
-  .precedent{
+
+  .precedent {
     background-color: white;
-    color:$rouge;
+    color: $rouge;
     border: 2px solid $rouge;
-    &:hover{
+
+    &:hover {
       background-color: #FDDDDC;
     }
   }
+}
 
- }
-
-
-.barreprogres{
-  margin:0 25px 30px auto ;
+// Barre de progression
+.barreprogres {
+  margin: 0 25px 30px auto;
   overflow: hidden;
   text-align: center;
   counter-reset: step;
 
-  &.active{
-    width: 100%; /* Largeur maximale lorsque l'étape est active */
-    transition: width 0.5s ease; /* Durée et fonction de transition */
+  &.active {
+    width: 100%;
+    transition: width 0.5s ease;
   }
-  li{
+
+  li {
     list-style-type: none;
     font-family: $fontePrimaire;
     color: black;
@@ -157,8 +137,12 @@ html {
     width: 33.33%;
     float: left;
     position: relative;
-    @media (min-width: 600px) { font-size: 16px;}
-    &:before{
+
+    @media (min-width: 600px) {
+      font-size: 16px;
+    }
+
+    &:before {
       content: counter(step);
       counter-increment: step;
       width: 40px;
@@ -170,51 +154,59 @@ html {
       border-radius: 50%;
       margin: 0 auto 10px auto;
     }
-    &:after{
-      content:'';
+
+    &:after {
+      content: '';
       width: 100%;
       height: 4px;
       background: $jaune;
       position: absolute;
       left: -50%;
       top: 20px;
-      z-index: -1; /*put it behind the numbers*/
+      z-index: -1;
     }
-    &:first-child:after{
+
+    &:first-child:after {
       content: none;
     }
-    &.active:before{
-      background: $rouge;
-      color: white;
-    }
-    &.active:after{
-      background: $rouge;
-      color: white;
-    }
-  }}
 
-//conteneur nom mise en forme
-.conteneur-nom{
+    &.active:before {
+      background: $rouge;
+      color: white;
+    }
+
+    &.active:after {
+      background: $rouge;
+      color: white;
+    }
+  }
+}
+
+// Conteneur pour le nom
+.conteneur-nom {
   @media (min-width: 600px) {
     display: flex;
     flex-direction: row;
+
     .nom {
       margin-left: 1em;
     }
   }
 }
 
-.contour-champ{
+// Styles pour les champs de formulaire
+.contour-champ {
   border: 1px solid #CFD3D4;
   border-radius: 4px;
   margin-top: 1em;
   padding: .5em;
 }
-.sous-titre-infos{
+
+.sous-titre-infos {
   line-height: 1;
-  border-bottom:1px dashed #CFD3D4;
-  //telecharger police et lier
+  border-bottom: 1px dashed #CFD3D4;
 }
+
 .conteneur-expiration {
   position: relative;
   border: 1px solid #aaa;
@@ -243,67 +235,42 @@ input.exp {
   appearance: none;
   font-size: 14px;
 }
-//changer la forme des champs input
-.input-type-texte{
-  height: 21px;
-  //background-color: #F2F2F2;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-}
 
-.conteneur-icones i {
-  font-size: 38px; /* Ajustez cette valeur selon la taille désirée */
-}
-
-//style des messages d'erreur'
-.formulaire__erreur{
+// Styles pour les messages d'erreur
+.formulaire__erreur {
   font-size: 0.9em;
   color: #D32F2F;
+}
 
+.formulaire__item--erreur {
+  border: 1px solid #D32F2F;
 }
-.formulaire__item--erreur{
-  border:1px solid #D32F2F;
-  //position: relative;
-}
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
+
+// Marquage des étapes actives/complétées en vert
 #progressbar li.active:before, #progressbar li.active:after {
   background: #ee0979;
   color: white;
 }
-.conteneur_boutons{
+
+// Conteneur des boutons
+.conteneur_boutons {
   display: flex;
   flex-direction: row;
+
   @media (min-width: 600px) {
     margin-top: 1em;
     margin-left: 4.7em;
   }
 }
 
-/* Masquer tous les fieldset par défaut */
+// Masquer tous les fieldsets par défaut
 fieldset {
   display: none;
-  opacity: 1; /* Opacité initiale */
-  transition: opacity 0.5s ease-in-out; /* Transition d'opacité */
-
-}
-/* Lorsque le fieldset est masqué, diminue l'opacité pour le faire disparaître en fondu */
-fieldset.hidden {
-  opacity: 0; /* Opacité lorsque masqué */
-  pointer-events: none; /* Désactive les interactions avec les éléments masqués */
-  height: 0; /* Ajuste la hauteur à 0 pour masquer complètement */
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
-/* Afficher le fieldset de l'étape actuelle */
+// Masquer le fieldset de l'étape actuelle
 fieldset.etape-1 {
   display: block;
 }
-
-//mettre croix devant messages d'erreur'
-//span::before {
-//  content: url('../public/liaisons/images/erreur.svg');
-//  display: inline-block;
-//  width: 20px; /* Ajustez la largeur en fonction de vos besoins */
-//  height: 20px; /* Ajustez la hauteur en fonction de vos besoins */
-//  margin-right: 5px; /* Ajustez la marge droite en fonction de vos besoins */
-//}
